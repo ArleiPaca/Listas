@@ -4,6 +4,8 @@ import br.com.arlei.modelo.Episodio;
 import br.com.arlei.modelo.Filme;
 import br.com.arlei.modelo.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -49,6 +51,19 @@ public class Main {
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+
+        var filmeDoPaulo = new Filme();
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.setAnoDeLancamento(2003);
+        filmeDoPaulo.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoPaulo);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista" + listaDeFilmes.size());
+        System.out.println("Primeiro filme" + listaDeFilmes.get(0).getNome());
 
     }
 }
